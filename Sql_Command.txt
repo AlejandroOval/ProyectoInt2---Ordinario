@@ -1,0 +1,85 @@
+USE [PuntoDeVentaTB]
+GO
+/****** Object:  Table [dbo].[Clientes]    Script Date: 28/11/2023 17:56:52 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Clientes](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[RFC] [varchar](100) NULL,
+	[NombreCl] [varchar](100) NULL,
+	[CodigoP] [varchar](100) NULL,
+	[Direccion] [varchar](100) NULL,
+	[TelefonoCl] [varchar](100) NULL,
+	[CorreoCl] [varchar](100) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[DB_Usuario]    Script Date: 28/11/2023 17:56:53 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[DB_Usuario](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[Nombre] [varchar](50) NULL,
+	[apellidos] [varchar](50) NULL,
+	[DNI] [varchar](50) NULL,
+	[Telefono] [varchar](50) NULL,
+	[Usuario] [varchar](50) NULL,
+	[Contrasena] [varchar](50) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Facturacion]    Script Date: 28/11/2023 17:56:53 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Facturacion](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[Codigo] [varchar](50) NULL,
+	[Producto] [varchar](50) NULL,
+	[Precioxunidad] [varchar](50) NULL,
+	[cantidad] [varchar](50) NULL,
+	[Cliente] [varchar](50) NULL,
+	[Direccion] [varchar](50) NULL,
+	[CodigoPost] [varchar](50) NULL,
+	[RFC] [varchar](50) NULL,
+	[CDFI] [varchar](50) NULL,
+	[TelfonoCl] [varchar](50) NULL,
+	[Correo] [varchar](50) NULL,
+	[MetodoPago] [varchar](50) NULL,
+	[MontoTotal] [varchar](50) NULL,
+	[NumFactura] [varchar](50) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Inventario]    Script Date: 28/11/2023 17:56:53 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Inventario](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Producto] [varchar](250) NOT NULL,
+	[Categoria] [varchar](250) NOT NULL,
+	[Precio] [float] NOT NULL,
+	[Cantidad] [int] NOT NULL,
+	[Codigo] [nchar](100) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
